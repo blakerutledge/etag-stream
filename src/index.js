@@ -2,7 +2,7 @@ const stream = require('stream');
 const etag = require('etag-hash');
 class ETagStream extends stream.Transform {
   constructor(opts = {}) {
-    const { partSizeInMb = 5, mode = 'through' } = opts;
+    const { partSizeInMb = 8, mode = 'through' } = opts;
     super();
     this.mode = mode;
     this.hash = etag.createHash(partSizeInMb);
